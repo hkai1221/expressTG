@@ -7,7 +7,7 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 const app = express();
 
 // Set the bot API endpoint
-app.use(await bot.createWebhook({ domain: webhookDomain }));
+app.use(await bot.createWebhook({ domain: process.env.WEBHOOK_DOMAIN }));
 
 try {
   bot.start((ctx) => ctx.reply("Welcome"));
